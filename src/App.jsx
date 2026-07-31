@@ -10,6 +10,10 @@ export default function App() {
   const handleDecrement = () => {
     setCount(count - 1);
   };
+
+  const handleReset = () => {
+    setCount(0);
+  };
   return (
     <>
       <div className="app-container">
@@ -19,11 +23,17 @@ export default function App() {
 
       <div className="counter-container">
         <h2>Count: {count}</h2>
+
         <button className="increment" onClick={handleIncrement}>
           + Increment
         </button>
+
         <button className="decrement" onClick={handleDecrement}>
           - Decrement
+        </button>
+
+        <button className="reset" onClick={handleReset}>
+          Reset
         </button>
       </div>
     </>
