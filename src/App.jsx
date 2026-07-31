@@ -8,7 +8,9 @@ export default function App() {
   };
 
   const handleDecrement = () => {
-    setCount(count - 1);
+    if (count > 0) {
+      setCount(count - 1);
+    }
   };
 
   const handleReset = () => {
