@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function App() {
   const [count, setCount] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleIncrement = () => {
     setCount((prevCount) => prevCount + 1);
@@ -21,7 +22,16 @@ export default function App() {
   const handleQuickActions = (value) => {
     setCount((prev) => Math.max(0, prev + value));
   };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+  };
   return (
+    <div className={`main-wrapper ${isDarkMode ? "dark-mode" : ""}`}>
+      <button className="theme-toggle-btn" onClick={toggleDarkMode}>
+        {isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+      </button>
+
       <div className="main-container">
         <div className="app-container">
           <h1>Counter App</h1>
@@ -90,5 +100,6 @@ export default function App() {
           </div>
         </div>
       </div>
+    </div>
   );
 }
