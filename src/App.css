@@ -183,3 +183,68 @@ body {
 .quick-btn:active {
   transform: translateY(0);
 }
+
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 0.9rem;
+}
+
+
+.main-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease; 
+}
+
+
+.main-wrapper.dark-mode {
+  background-color: #0f172a; 
+}
+
+.dark-mode .theme-toggle-btn {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+.dark-mode .app-container h1 {
+  color: #ffffff;
+}
+
+.dark-mode .app-container p {
+  color: #94a3b8;
+}
+
+.dark-mode .counter-container {
+  background-color: #1e293b; /* Dark card color */
+  border-color: #334155;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .counter-container h2 {
+  color: #ffffff;
+}
+
+.dark-mode .quick-btn {
+  background-color: #334155;
+  color: #cbd5e1;
+  border-color: #475569;
+}
+
+.dark-mode .quick-btn:hover {
+  background-color: #475569;
+  color: #ffffff;
+  border-color: #6366f1;
+}
