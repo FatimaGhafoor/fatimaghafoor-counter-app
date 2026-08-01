@@ -10,7 +10,7 @@ export default function App() {
 
   const handleDecrement = () => {
     if (count > 0) {
-      setCount(count - 1);
+      setCount((prev) => prev - 1);
     }
   };
 
