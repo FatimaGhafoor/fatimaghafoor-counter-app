@@ -22,7 +22,6 @@ export default function App() {
     setCount((prev) => Math.max(0, prev + value));
   };
   return (
-    <>
       <div className="main-container">
         <div className="app-container">
           <h1>Counter App</h1>
@@ -91,6 +90,5 @@ export default function App() {
           </div>
         </div>
       </div>
-    </>
   );
 }
