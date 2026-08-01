@@ -58,7 +58,6 @@ counter-app/
 
 ## 🔮 Possible Improvements
 
-- Refactor the six Quick Action buttons into a single `.map()` over an array (DRY principle)
 - Extract the minimum count boundary (`0`) into a configurable constant/prop
 - Persist dark mode preference using local state lifted to a parent, or context (once Hooks week is covered)
 
