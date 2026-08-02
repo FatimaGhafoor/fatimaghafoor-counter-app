@@ -5,14 +5,8 @@ export default function App() {
   const [count, setCount] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const handleIncrement = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
-
-  const handleDecrement = () => {
-    if (count > 0) {
-      setCount((prev) => prev - 1);
-    }
+  const handleCounterActions = (value) => {
+    setCount((prev) => Math.max(0, prev + value));
   };
 
   const handleReset = () => {
@@ -26,7 +20,7 @@ export default function App() {
   const toggleDarkMode = () => {
     setIsDarkMode((prev) => !prev);
   };
-  const quickActions = [1, 5, 10, -1, -5, -10];
+  const QUICK_ACTIONS = [1, 5, 10, -1, -5, -10];
   return (
     <div className={`main-wrapper ${isDarkMode ? "dark-mode" : ""}`}>
       <button className="theme-toggle-btn" onClick={toggleDarkMode}>
@@ -42,14 +36,20 @@ export default function App() {
         <div className="counter-container">
           <span className="label-text">Current Count</span>
           <h2>{count}</h2>
-          <span className="sub-label-text">Initial value is 0</span>
+          <span className="sub-label-text">Counter starts from 0</span>
 
           <div className="main-actions">
-            <button className="increment" onClick={handleIncrement}>
+            <button
+              className="increment"
+              onClick={() => handleCounterActions(1)}
+            >
               + Increment
             </button>
 
-            <button className="decrement" onClick={handleDecrement}>
+            <button
+              className="decrement"
+              onClick={() => handleCounterActions(-1)}
+            >
               - Decrement
             </button>
 
@@ -60,7 +60,7 @@ export default function App() {
 
           <div className="quick-actions">
             <h3>Quick Actions</h3>
-            {quickActions.map((val) => (
+            {QUICK_ACTIONS.map((val) => (
               <button
                 key={val}
                 className="quick-btn"
