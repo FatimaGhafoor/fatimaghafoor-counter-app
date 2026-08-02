@@ -26,6 +26,7 @@ export default function App() {
   const toggleDarkMode = () => {
     setIsDarkMode((prev) => !prev);
   };
+  const quickActions = [1, 5, 10, -1, -5, -10];
   return (
     <div className={`main-wrapper ${isDarkMode ? "dark-mode" : ""}`}>
       <button className="theme-toggle-btn" onClick={toggleDarkMode}>
@@ -59,44 +60,15 @@ export default function App() {
 
           <div className="quick-actions">
             <h3>Quick Actions</h3>
-            <div className="quick-actions-grid">
+            {quickActions.map((val) => (
               <button
+                key={val}
                 className="quick-btn"
-                onClick={() => handleQuickActions(1)}
+                onClick={() => handleQuickActions(val)}
               >
-                +1
+                {val > 0 ? `+${val}` : val}
               </button>
-              <button
-                className="quick-btn"
-                onClick={() => handleQuickActions(5)}
-              >
-                +5
-              </button>
-              <button
-                className="quick-btn"
-                onClick={() => handleQuickActions(10)}
-              >
-                +10
-              </button>
-              <button
-                className="quick-btn"
-                onClick={() => handleQuickActions(-1)}
-              >
-                -1
-              </button>
-              <button
-                className="quick-btn"
-                onClick={() => handleQuickActions(-5)}
-              >
-                -5
-              </button>
-              <button
-                className="quick-btn"
-                onClick={() => handleQuickActions(-10)}
-              >
-                -10
-              </button>
-            </div>
+            ))}
           </div>
         </div>
       </div>
