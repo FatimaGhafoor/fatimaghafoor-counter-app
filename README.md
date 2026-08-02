@@ -2,7 +2,7 @@
 
 A simple, clean React mini-project to practice **state management**, **event handling**, and **conditional rendering** — built as part of a hands-on 30-day React learning roadmap.
 
-![alt text](image.png)
+
 ## ✨ Features
 
 - **Increment / Decrement / Reset** — core counter functionality
